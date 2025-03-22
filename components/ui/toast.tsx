@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/utils";
-import { useToast as useShadToast } from "@/components/ui/use-toast";
+import { cn } from "lib/utils";
+import { useToast as useShadToast } from "components/ui/use-toast";
 import { X } from "lucide-react"; // Import close icon
 
 export function Toaster() {

@@ -1,10 +1,10 @@
-import { Suspense } from "react"
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import Projects from "@/components/projects"
-import Skills from "@/components/skills"
-import Contact from "@/components/contact"
-import LoadingSpinner from "@/components/loading-spinner"
+import { Suspense } from "react";
+import Hero from "components/hero"; // Correcting import
+import About from "components/about"; // Correcting import
+import Projects from "components/projects"; // Correcting import
+import Skills from "components/skills"; // Correcting import
+import Contact from "components/contact"; // Correcting import
+import LoadingSpinner from "components/loading-spinner"; // Correcting import
 
 export default function Home() {
   return (
@@ -17,6 +17,5 @@ export default function Home() {
         <Contact />
       </Suspense>
     </main>
-  )
+  );
 }
-

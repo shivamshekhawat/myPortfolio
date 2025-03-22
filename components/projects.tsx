@@ -3,10 +3,11 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "components/ui/card"
+import { Button } from "components/ui/button"
 import { ExternalLinkIcon, GithubIcon } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "components/ui/badge"
+import Image from 'next/image';
 
 // This would typically come from your MongoDB database via an API
 const projects = [
@@ -15,7 +16,7 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "A full-stack e-commerce platform with product management, cart functionality, and payment integration.",
-    image: "/Image/E-commerce.jpg",
+    image: "Image/E-commerce.jpg",
     tags: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
     demoUrl: "",
     githubUrl: "",
@@ -46,7 +47,7 @@ const projects = [
     id: 5,
     title: "Postman",
     description: "It is an API testing tool that simplifies the process of sending requests, inspecting responses, and automating tests.",
-    image: "/Image/postman.jpg",
+    image: "Image/postman.jpg",
     tags: ["Node.js", "Express", "MongoDB", "JWT"],
     demoUrl: "https://postman-clone-flame.vercel.app/",
     githubUrl: "https://github.com/shivamshekhawat/Postman-Clone.git",
@@ -66,7 +67,7 @@ const projects = [
     id: 7,
     title: "Background Changer",
     description: "Allows users to dynamically switch the background of a webpage or app based on preferences or conditions.",
-    image: "/Image/background.jpg",
+    image: "Image/background.jpg",
     tags: ["React", "Node.js", ],
     demoUrl: "https://backgroundchanger00.netlify.app/",
     githubUrl: "https://github.com/shivamshekhawat/BackgroundChanger.git",
@@ -76,7 +77,7 @@ const projects = [
     id: 8,
     title: "Currency Converter",
     description: "A currency converter instantly converts one currency to another using real-time exchange rates.",
-    image: "/Image/currency.jpg",
+    image: "Image/currency.jpg",
     tags: ["React", "Node.js", ],
     demoUrl: "https://currencyconverter019.netlify.app/",
     githubUrl: "https://github.com/shivamshekhawat/Currency-Converter.git",
@@ -86,7 +87,7 @@ const projects = [
     id: 9,
     title: "Password Generator",
     description: "A password generator creates strong, random passwords to enhance security and protect accounts.",
-    image: "/Image/password.jpg",
+    image: "Image/password.jpg",
     tags: ["React", "Node.js", ],
     demoUrl: "https://passwordgenerator011.netlify.app/",
     githubUrl: "https://github.com/shivamshekhawat/Password-Generator.git",
@@ -96,7 +97,7 @@ const projects = [
     id: 10,
     title: "To-Do List",
     description: "A to-do list helps organize tasks efficiently by listing, tracking, and managing daily activities.",
-    image: "/Image/to-do.jpg",
+    image: "Image/to-do.jpg",
     tags: ["React", "Node.js", ],
     demoUrl: "https://todo-list011.netlify.app/",
     githubUrl: "https://github.com/shivamshekhawat/ToDo-List.git",
@@ -182,7 +183,7 @@ export default function Projects() {
             <motion.div key={project.id} variants={itemVariants} whileHover={{ y: -10 }} transition={{ duration: 0.3 }}>
               <Card className="overflow-hidden h-full flex flex-col bg-card hover:shadow-xl transition-all duration-300">
                 <div className="relative overflow-hidden aspect-video">
-                  <img
+                  <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "components/ui/button";
 import {
   ArrowDownIcon,
   GithubIcon,
@@ -59,7 +59,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-primary font-medium text-xl md:text-2xl font-bold whitespace-nowrap"
+              className="text-primary  text-xl md:text-2xl font-bold whitespace-nowrap"
             >
               Hello, I&apos;m Shivam Shekhawat
             </motion.p>

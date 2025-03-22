@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "components/ui/card"; // Ensuring correct import statement
 import { CodeIcon, PenToolIcon, UsersIcon } from "lucide-react";
+import Image from "next/image"; // Importing Image component
 
 const services = [
   {
@@ -89,10 +90,12 @@ export default function About() {
           >
             <div className="relative aspect-video overflow-hidden rounded-lg shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-600/20 animate-gradient-xy"></div>
-              <img
+              <Image // Using Image component from next/image
                 src="/Image/code.jpg"
                 alt="Working on code"
                 className="w-full h-full object-cover mix-blend-overlay"
+                width={500} // Specify appropriate width
+                height={300} // Specify appropriate height
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>

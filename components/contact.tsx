@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast"; // Ensure correct import
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "components/ui/use-toast"; // Correcting import
+import { Button } from "components/ui/button"; // Correcting import
+import { Input } from "components/ui/input"; // Correcting import
+import { Textarea } from "components/ui/textarea"; // Correcting import
 
 export default function Contact() {
   const { toast } = useToast(); // Ensure toast function is available
@@ -45,7 +45,7 @@ export default function Contact() {
       });
 
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (_error) {
+    } catch {
       toast({
         title: "❌ Error",
         description: "There was an error sending your message. Please try again.",
