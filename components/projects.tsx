@@ -18,6 +18,7 @@ const projects = [
       "A full-stack e-commerce platform with product management, cart functionality, and payment integration.",
     image: "Image/E-commerce.jpg",
     tags: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+   
     demoUrl: "",
     githubUrl: "",
     category: "fullstack",
@@ -186,7 +187,10 @@ export default function Projects() {
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
+                    width={500} // Set an appropriate width
+                    height={300} // Set an appropriate height
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    
                   />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">

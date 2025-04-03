@@ -58,6 +58,7 @@ export default function Skills() {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.15 } }}
             >
               <h3 className="text-2xl font-bold mb-6 text-center md:text-left">{section.title}</h3>
               <div className="space-y-6">
@@ -67,6 +68,7 @@ export default function Skills() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
+                    whileHover={{ scale: 1.05, transition: { duration: 0.15 } }}
                   >
                     <div className="flex justify-between mb-2">
                       <span className="font-medium">{skill.name}</span>
@@ -90,11 +92,14 @@ export default function Skills() {
           {["Git", "Docker", "AWS", "Firebase", "Jest", "CI/CD", "Figma", "Responsive Design"].map((tool, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
-              className="bg-card p-4 rounded-lg text-center shadow-sm hover:shadow-md transition-all duration-300"
+              whileHover={{ scale: 1.15, transition: { type: "spring", stiffness: 600, damping: 10, duration: 0.15 } }}
+              className="bg-card p-4 rounded-lg text-center shadow-sm hover:shadow-md transition-all duration-100"
             >
               <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center">
-                <div className="w-6 h-6 bg-primary rounded-full opacity-70"></div>
+                <motion.div
+                  className="w-6 h-6 bg-primary rounded-full opacity-70"
+                  whileHover={{ scale: 1.3, transition: { duration: 0.1 } }}
+                ></motion.div>
               </div>
               <p className="font-medium">{tool}</p>
             </motion.div>

@@ -5,6 +5,7 @@ import Projects from "components/projects"; // Correcting import
 import Skills from "components/skills"; // Correcting import
 import Contact from "components/contact"; // Correcting import
 import LoadingSpinner from "components/loading-spinner"; // Correcting import
+import Experience from "@/experience";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        < Experience/>
         <Skills />
         <Contact />
       </Suspense>

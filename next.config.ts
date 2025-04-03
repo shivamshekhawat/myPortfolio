@@ -1,19 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
   trailingSlash: true,
-};
-module.exports = {
+  output: "export", // Enables static site export
+  images: {
+    unoptimized: true, // Disables Next.js Image Optimization for static exports
+  },
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
-
-  reactStrictMode: true,
-  trailingSlash: true,  // Ensures correct URL structure for static exports
-  output: 'export',  // Enables static site export
 };
-
 
 export default nextConfig;

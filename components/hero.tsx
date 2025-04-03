@@ -59,7 +59,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-primary  text-xl md:text-2xl font-bold whitespace-nowrap"
+              className="text-primary text-xl md:text-2xl font-bold whitespace-nowrap"
             >
               Hello, I&apos;m Shivam Shekhawat
             </motion.p>
@@ -78,11 +78,8 @@ export default function Hero() {
               className="text-foreground/80 text-lg mb-8 max-w-xl mx-auto lg:mx-0"
             >
               I engineer high-performance, scalable web applications with
-              React.js, Next.js, Node.js, and MongoDB. With expertise in API
-              architecture, state management, and database optimization, I craft
-              seamless, secure, and efficient digital experiences, ensuring
-              robust authentication, fluid UI interactions, and cutting-edge
-              performance.
+              React.js, Next.js, Node.js, and MongoDB. I craft seamless, secure,
+              and efficient digital experiences.
             </motion.p>
 
             {/* Buttons */}
@@ -92,7 +89,10 @@ export default function Hero() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button size="lg" className="group">
+              <Button
+                size="lg"
+                className="group hover:scale-105 transition-transform"
+              >
                 View Projects
                 <ArrowDownIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
               </Button>
@@ -100,7 +100,11 @@ export default function Hero() {
                 href="https://drive.google.com/file/d/1SSetJ111ICTiFaaDf50ZRHpLiCpYGaW_/view?usp=sharing"
                 target="_blank"
               >
-                <Button size="lg" variant="outline">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="hover:scale-105 transition-transform"
+                >
                   Download Resume
                 </Button>
               </Link>
@@ -113,44 +117,48 @@ export default function Hero() {
               transition={{ delay: 0.7, duration: 0.8 }}
               className="flex gap-4 mt-8 justify-center lg:justify-start"
             >
-              <a
-                href="https://github.com/shivamshekhawat"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="ghost" size="icon" aria-label="GitHub">
-                  <GithubIcon className="h-5 w-5" />
-                </Button>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/shivam-shekhawat-853271218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="ghost" size="icon" aria-label="LinkedIn">
-                  <LinkedinIcon className="h-5 w-5" />
-                </Button>
-              </a>
-
-              <a
-                href="https://x.com/shivamshekhawa0?t=K6ZvT_s73vv-0la5Ke_8qw&s=09"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="ghost" size="icon" aria-label="Twitter">
-                  <TwitterIcon className="h-5 w-5" />
-                </Button>
-              </a>
-             
+              {[
+                {
+                  href: "https://github.com/shivamshekhawat",
+                  icon: <GithubIcon className="h-5 w-5" />,
+                  label: "GitHub",
+                },
+                {
+                  href: "https://www.linkedin.com/in/shivam-shekhawat-853271218",
+                  icon: <LinkedinIcon className="h-5 w-5" />,
+                  label: "LinkedIn",
+                },
+                {
+                  href: "https://x.com/shivamshekhawa0",
+                  icon: <TwitterIcon className="h-5 w-5" />,
+                  label: "Twitter",
+                },
+              ].map(({ href, icon, label }) => (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={label}
+                >
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    aria-label={label}
+                    className="hover:scale-110 transition-transform"
+                  >
+                    {icon}
+                  </Button>
+                </a>
+              ))}
             </motion.div>
           </motion.div>
 
           {/* Right Side - Profile Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
+            whileHover={{ scale: 1.05 }}
             className="relative"
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
@@ -162,7 +170,7 @@ export default function Hero() {
                   alt="Developer Portrait"
                   width={200}
                   height={200}
-                  className="rounded-full w-3/4 h-3/4 object-cover border-4 border-background shadow-xl"
+                  className="rounded-full w-3/4 h-3/4 object-cover border-4 border-background shadow-xl hover:scale-110 transition-transform"
                 />
               </div>
             </div>

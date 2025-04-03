@@ -1,15 +1,7 @@
 'use client'
 
-import { ThemeProvider as NextThemesProvider, type Attribute } from 'next-themes'
+import { ThemeProvider as NextThemesProvider, type ThemeProviderProps } from 'next-themes'
 import { useEffect, useState } from 'react'
-
-type ThemeProviderProps = {
-  children: React.ReactNode
-  attribute?: Attribute // Change this line
-  defaultTheme?: string
-  enableSystem?: boolean
-  disableTransitionOnChange?: boolean
-}
 
 export function ThemeProvider({
   children,
@@ -25,7 +17,7 @@ export function ThemeProvider({
   }, [])
 
   if (!mounted) {
-    return <>{children}</>
+    return <div style={{ visibility: 'hidden' }}>{children}</div>
   }
 
   return (
