@@ -2,29 +2,28 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { Progress } from "components/ui/progress"
 
 const frontendSkills = [
-  { name: "HTML/CSS", level: 95 },
-  { name: "JavaScript", level: 90 },
-  { name: "React.js", level: 92 },
-  { name: "Next.js", level: 88 },
-  { name: "Tailwind CSS", level: 85 },
+  { name: "HTML/CSS" },
+  { name: "JavaScript" },
+  { name: "React.js" },
+  { name: "Next.js" },
+  { name: "Tailwind CSS" },
 ]
 
 const backendSkills = [
-  { name: "Node.js", level: 88 },
-  { name: "Express.js", level: 85 },
-  { name: "MongoDB/ SQL", level: 82 },
-  { name: "RESTful APIs", level: 90 },
-  { name: "GraphQL", level: 75 },
+  { name: "Node.js" },
+  { name: "Express.js" },
+  { name: "MongoDB/ SQL" },
+  { name: "RESTful APIs" },
+  { name: "GraphQL" },
 ]
 
 const programmingLanguages = [
-  { name: "C", level: 80 },
-  { name: "C++", level: 85 },
-  { name: "Java", level: 90 },
-  { name: "Python", level: 88 },
+  { name: "C" },
+  { name: "C++" },
+  { name: "Java" },
+  { name: "Python" },
 ]
 
 export default function Skills() {
@@ -61,23 +60,20 @@ export default function Skills() {
               whileHover={{ scale: 1.05, transition: { duration: 0.15 } }}
             >
               <h3 className="text-2xl font-bold mb-6 text-center md:text-left">{section.title}</h3>
-              <div className="space-y-6">
+              <ul className="space-y-4">
                 {section.skills.map((skill, index) => (
-                  <motion.div
+                  <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     whileHover={{ scale: 1.05, transition: { duration: 0.15 } }}
+                    className="font-medium text-lg"
                   >
-                    <div className="flex justify-between mb-2">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-primary">{skill.level}%</span>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </motion.div>
+                    {skill.name}
+                  </motion.li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>
