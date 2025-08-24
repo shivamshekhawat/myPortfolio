@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { MoonIcon, SunIcon, MenuIcon, XIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "components/ui/button";
-import { cn } from "lib/utils";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -41,7 +41,7 @@ export default function Navbar() {
     const section = document.querySelector(href);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false); // Close menu on mobile
+      setMobileMenuOpen(false);
     }
   };
 
@@ -57,6 +57,7 @@ export default function Navbar() {
           <Link
             href="#home"
             className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent transition-transform hover:scale-105"
+            onClick={(e) => handleSmoothScroll(e as any, "#home")}
           >
             Portfolio
           </Link>
@@ -81,7 +82,11 @@ export default function Navbar() {
               className="ml-2"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+              {theme === "dark" ? (
+                <SunIcon className="h-5 w-5" />
+              ) : (
+                <MoonIcon className="h-5 w-5" />
+              )}
             </Button>
           </nav>
 
@@ -94,7 +99,11 @@ export default function Navbar() {
               className="mr-2"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+              {theme === "dark" ? (
+                <SunIcon className="h-5 w-5" />
+              ) : (
+                <MoonIcon className="h-5 w-5" />
+              )}
             </Button>
             <Button
               variant="ghost"
@@ -102,7 +111,11 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+              {mobileMenuOpen ? (
+                <XIcon className="h-5 w-5" />
+              ) : (
+                <MenuIcon className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
