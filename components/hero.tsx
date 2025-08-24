@@ -89,13 +89,17 @@ export default function Hero() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button
-                size="lg"
-                className="group hover:scale-105 transition-transform"
-              >
-                View Projects
-                <ArrowDownIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-              </Button>
+             <Button
+  size="lg"
+  onClick={() => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="group hover:scale-105 transition-transform"
+>
+  View Projects
+  <ArrowDownIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+</Button>
+
               <Link
                 href="https://drive.google.com/file/d/1SSetJ111ICTiFaaDf50ZRHpLiCpYGaW_/view?usp=sharing"
                 target="_blank"
